@@ -1,0 +1,119 @@
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #f5f5f5;
+    background-color: #1e1e1e;
+    scroll-behavior: smooth; 
+}
+
+h1, h2 {
+    color: #f08a24;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.navbar {
+    background-color: #333;
+    color: #f5f5f5;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10; 
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    position: relative; 
+    z-index: 10; 
+}
+
+.navbar a:hover {
+    color: #f08a24;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: #f5f5f5;
+    cursor: pointer;
+}
+
+.quienes-somos-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    text-align: center;
+}
+
+.quienes-somos-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.quienes-somos-section p {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.quienes-somos-section.visible p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.quienes-somos img {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.quienes-somos-section.visible .quienes-somos img {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.footer {
+    background-color: #333;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer p {
+    text-align: center;
+}
+
+@media (max-width: 568px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute; 
+        top: 60px;
+        right: 10px;
+        background-color: #333;
+        padding: 20px;
+        border-radius: 8px;
+        width: 180px;
+        z-index: 10; 
+    }
+
+    .navbar ul.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
